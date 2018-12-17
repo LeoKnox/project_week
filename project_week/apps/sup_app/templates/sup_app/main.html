@@ -38,5 +38,33 @@
                 <option>area affect</option>
             </select>
         </div>
+        <table>
+          <tr>
+            <th>Weapon</th>
+            <th>Damage</th>
+            <th>Equip</th>
+          </tr>
+          {% for weapon in arsenal %}
+          <tr>
+            <td>{{weapon.weapon}}</td>
+            <td>{{weapon.number}}d{{weapon.dice}}</td>
+            <td>{{weapon.equip}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <table>
+          <tr>
+            <th>Spell</th>
+            <th>Damage</th>
+            <th>Type</th>
+          </tr>
+          {% for spell in spellbook %}
+          <tr>
+            <td>{{spell.spell}}</td>
+            <td>{{spell.spell_num}}d{{spell.dice}}</td>
+            <td>{{spell.spell_type}}</td>
+          </tr>
+          {% endfor %}
+        </table>
     </body>
 </html>

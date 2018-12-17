@@ -5,27 +5,47 @@
     <body>
         <h2>create character attributes</h2>
         <h4>weapons</h4>
-        <form class="input-group-append" action="character">
+        <form class="input-group-append" action="create_weapon" method="post">
+            {% csrf_token %}
             <input type="text" name="weapon">
-            <input type="number" name="amount" min="1" max="8" step="1" value="1">
+            <input type="number" name="number" min="1" max="8" step="1" value="1">
             <select name="dice">
-                <option>d6</option>
-                <option>d10</option>
-                <option>d12</option>
+                <option value="6">d6</option>
+                <option value="10">d10</option>
+                <option value="12">d12</option>
+            </select>
+            <select name="equip">
+              <option value="1h">1-handed</option>
+              <option value="2h">2-handed</option>
+              <option value="2w">dual wield</option>
+              <option value="ra">range</option>
             </select>
             <input type="submit" class="btn" value="create">
         </form>
         <h4>spells</h4>
-        <form class="input-group-append">
+        <form class="input-group-append" action="create_spell" method="post">
+            {% csrf_token %}
             <input type="text" name="spell">
-            <input type="number" name="amount" min="1" max="8" step="1" value="1">
-            <select>
-                <option>d8</option>
-                <option>d12</option>
-                <option>d20</option>
+            <input type="number" name="spell_num" min="1" max="8" step="1" value="1">
+            <select name="spell_dice">
+              <option value="8">d8</option>
+              <option value="12">d12</option>
+              <option value="20">d20</option>
+            </select>
+            <select name="spell_type">
+              <option value="fire">fire</option>
+              <option value="ice">ice</option>
+              <option value="death">death</option>
             </select>
             <input type="submit" class="btn" value="create">
         </form>
+        {% if messages %}
+          <ul class="messages">
+            {% for error in messages %}
+              <li>{{error}}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
         <h4>abilities</h4>
         <form class="input-group-append">
             <input type="text" name="ability">
