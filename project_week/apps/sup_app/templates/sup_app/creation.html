@@ -3,6 +3,33 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
-        <h2>create character abilities</h2>
+        <h2>create character attributes</h2>
+        <h4>weapons</h4>
+        <form class="input-group-append" action="character">
+            <input type="text" name="weapon">
+            <input type="number" name="amount" min="1" max="8" step="1" value="1">
+            <select name="dice">
+                <option>d6</option>
+                <option>d10</option>
+                <option>d12</option>
+            </select>
+            <input type="submit" class="btn" value="create">
+        </form>
+        <h4>spells</h4>
+        <form class="input-group-append">
+            <input type="text" name="spell">
+            <input type="number" name="amount" min="1" max="8" step="1" value="1">
+            <select>
+                <option>d8</option>
+                <option>d12</option>
+                <option>d20</option>
+            </select>
+            <input type="submit" class="btn" value="create">
+        </form>
+        <h4>abilities</h4>
+        <form class="input-group-append">
+            <input type="text" name="ability">
+            <input type="submit" class="btn" value="create">
+        </form>
     </body>
 </html>
