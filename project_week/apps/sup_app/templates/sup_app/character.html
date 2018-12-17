@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            body {
+                padding: 10px;
+            }
+
+            .class {
+                display:inline-block;
+            }
+        </style>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <h2>Create your Character</h2>
+        <p>points to spend: </p>
+        <form>
+            <div class="my-0 align-top d-inline-block" class="align-top">
+                <p>Character Name: <input type="text"></p>
+                <p>str:<input type="text"></p>
+                <p>int:<input type="text"></p>
+                <p>wis:<input type="text"></p>
+                <p>dex:<input type="text"></p>
+                <p>con:<input type="text"></p>
+                <p>cha:<input type="text"></p>
+            </div>
+            <div class="my-1 align-top d-inline-block">
+                <div>
+                    <p class="class">class </p>
+                    <select class="class">
+                        <option>fighter</option>
+                        <option>wizard</option>
+                        <option>thief</option>
+                        <option>cleric</option>
+                    </select>
+                    <p>HP:</p>
+                    <p>AC:</p>
+                    <p class="class">weapon:</p>
+                    <select class="class">
+                        <option>two-handed sword</option>
+                        <option>long sword</option>
+                        <option>staff</option>
+                    </select><br>
+                    <p class="class">armor:</p>
+                    <select class="class">
+                        <option>chainmail</option>
+                        <option>leather</option>
+                        <option>robe</option>
+                    </select><br>
+                    <p>Abilities</p>
+                    <input type="checkbox" value="SpellCasting">Spell Casting
+                    <input type="checkbox" value="Backstab">Backstab
+                    <input type="checkbox" value="Cleave">Cleave
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
