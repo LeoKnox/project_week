@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from .models import Weapon, Spell
 from ..mon_app.models import Unless
+import random
 
 # Create your views here.
 def index(request):
@@ -44,3 +45,22 @@ def test(request):
     #print(testone)
     print(Unless.objects.all().values())
     return HttpResponse(x)
+
+def combat(request):
+    #dicts = {}
+    #for x in range(6):
+    #    dicts[x] = str(random.randint(1,6))+str(random.randint(1,6))+str(random.randint(1,6))+str(random.randint(1,6))+str(random.randint(1,6))
+    #print (dicts)
+    lu =random.randint(3,6)
+    dicts = {
+        'luc':random.randint(1,6),
+        'atk':random.randint(3,10)+lu*((-1)**random.randrange(2)),
+        'res':random.randint(3,10)+lu*((-1)**random.randrange(2)),
+        'agi':random.randint(3,10)+lu*((-1)**random.randrange(2)),
+        'mag':random.randint(3,10)+lu*((-1)**random.randrange(2))
+    }
+    content = {
+        'd':dicts
+    }
+
+    return render(request, "sup_app/combat.html", content)

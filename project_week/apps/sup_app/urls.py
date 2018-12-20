@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^create_spell$', views.create_spell),
     url(r'^main$', views.main),
     url(r'^test$', views.test),
+    url(r'^combat$', views.combat),
 ]
